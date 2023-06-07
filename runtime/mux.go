@@ -61,12 +61,25 @@ type ServeMux struct {
 	errorHandler              ErrorHandlerFunc
 	streamErrorHandler        StreamErrorHandlerFunc
 	routingErrorHandler       RoutingErrorHandlerFunc
+	forwardResponseHandler    ForwardResponseHandler
 	disablePathLengthFallback bool
 	unescapingMode            UnescapingMode
 }
 
 // ServeMuxOption is an option that can be given to a ServeMux on construction.
 type ServeMuxOption func(*ServeMux)
+
+// A ForwardResponseHandler a runtime respone content wirte buffer
+type ForwardResponseHandler func(ctx context.Context, mux *ServeMux, w http.ResponseWriter, req *http.Request, resp []byte)
+
+// GRPC invoke resp change buf handler
+// Find mux's ForwardResponseHandler is not fond return resp value
+func DefaultForwardResponseHandler(ctx context.Context, mux *ServeMux, w http.ResponseWriter, req *http.Request, resp []byte) ([]byte) {
+	if mux.forwardResponseHandler == nil {
+		return resp
+	}
+	return mux.forwardResponseHandler(ctx, mux, w, req, resp)
+}
 
 // WithForwardResponseOption returns a ServeMuxOption representing the forwardResponseOption.
 //
@@ -263,6 +276,7 @@ func NewServeMux(opts ...ServeMuxOption) *ServeMux {
 		errorHandler:           DefaultHTTPErrorHandler,
 		streamErrorHandler:     DefaultStreamErrorHandler,
 		routingErrorHandler:    DefaultRoutingErrorHandler,
+		forwardResponseHandler  DefaultForwardResponseHandler,
 		unescapingMode:         UnescapingModeDefault,
 	}
 
