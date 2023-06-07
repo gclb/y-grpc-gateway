@@ -42,7 +42,7 @@ message HelloReply {
 }
 ```
 
-See [a_bit_of_everything.proto](https://github.com/grpc-ecosystem/grpc-gateway/blob/main/examples/internal/proto/examplepb/a_bit_of_everything.proto) for examples of more annotations you can add to customize gateway behavior.
+See [a_bit_of_everything.proto](https://github.com/gclb/y-grpc-gateway/blob/main/examples/internal/proto/examplepb/a_bit_of_everything.proto) for examples of more annotations you can add to customize gateway behavior.
 
 ## Generating the gRPC-Gateway stubs
 
@@ -188,7 +188,7 @@ func main() {
 }
 ```
 
-For more examples, please refer to [our boilerplate repository](https://github.com/johanbrandhorst/grpc-gateway-boilerplate).
+For more examples, please refer to [our boilerplate repository](https://github.com/johanbrandhorst/y-grpc-gateway-boilerplate).
 
 ## Testing the gRPC-Gateway
 

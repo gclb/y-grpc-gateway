@@ -3,7 +3,7 @@
 set -e
 
 JEKYLL_VERSION=4
-BUNDLE_DIR="/tmp/grpc-gateway-bundle"
+BUNDLE_DIR="/tmp/y-grpc-gateway-bundle"
 
 if [ ! -d "${BUNDLE_DIR}" ]; then
   mkdir "${BUNDLE_DIR}"
@@ -13,7 +13,7 @@ if [ ! -d "${BUNDLE_DIR}" ]; then
     --volume="${PWD}:/srv/jekyll" \
     -e "JEKYLL_UID=$(id -u)" \
     -e "JEKYLL_GID=$(id -g)" \
-    --volume="/tmp/grpc-gateway-bundle:/usr/local/bundle" \
+    --volume="/tmp/y-grpc-gateway-bundle:/usr/local/bundle" \
     -it "jekyll/builder:${JEKYLL_VERSION}" \
     bundle update
 fi
@@ -29,6 +29,6 @@ docker run --rm \
   -e "JEKYLL_UID=$(id -u)" \
   -e "JEKYLL_GID=$(id -g)" \
   -e "JEKYLL_GITHUB_TOKEN=${JEKYLL_GITHUB_TOKEN}" \
-  --volume="/tmp/grpc-gateway-bundle:/usr/local/bundle" \
+  --volume="/tmp/y-grpc-gateway-bundle:/usr/local/bundle" \
   -it "jekyll/builder:${JEKYLL_VERSION}" \
   jekyll serve

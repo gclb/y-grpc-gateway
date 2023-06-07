@@ -49,7 +49,7 @@ func TestEcho(t *testing.T) {
 			testEchoPathParamOverwrite(t, 8088)
 			testEchoBody(t, 8088, apiPrefix, true)
 			testEchoBody(t, 8088, apiPrefix, false)
-			// Use SendHeader/SetTrailer without gRPC server https://github.com/grpc-ecosystem/grpc-gateway/issues/517#issuecomment-684625645
+			// Use SendHeader/SetTrailer without gRPC server https://github.com/gclb/y-grpc-gateway/issues/517#issuecomment-684625645
 			testEchoBody(t, 8089, apiPrefix, true)
 			testEchoBody(t, 8089, apiPrefix, false)
 			testEchoBodyParamOverwrite(t, 8088)

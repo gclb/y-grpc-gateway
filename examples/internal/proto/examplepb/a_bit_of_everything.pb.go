@@ -1516,7 +1516,7 @@ func (*SnakeEnumResponse) Descriptor() ([]byte, []int) {
 }
 
 // Required message type -> OpenAPI
-// https://github.com/grpc-ecosystem/grpc-gateway/issues/2837
+// https://github.com/gclb/y-grpc-gateway/issues/2837
 type RequiredMessageTypeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
