@@ -276,7 +276,7 @@ func NewServeMux(opts ...ServeMuxOption) *ServeMux {
 		errorHandler:           DefaultHTTPErrorHandler,
 		streamErrorHandler:     DefaultStreamErrorHandler,
 		routingErrorHandler:    DefaultRoutingErrorHandler,
-		forwardResponseHandler  DefaultForwardResponseHandler,
+		forwardResponseHandler: DefaultForwardResponseHandler,
 		unescapingMode:         UnescapingModeDefault,
 	}
 
