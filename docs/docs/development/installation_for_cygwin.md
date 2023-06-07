@@ -46,9 +46,9 @@ Then `go get -u -v` the following packages:
 This will probably fail with a similar output to this:
 
     github.com/gclb/y-grpc-gateway (download)
-    # cd .; git clone https://github.com/gclb/y-grpc-gateway C:\path\to\your\cygwin\home\user\go\src\github.com\grpc-ecosystem\grpc-gateway
-    Cloning into 'C:\path\to\your\cygwin\home\user\go\src\github.com\grpc-ecosystem\grpc-gateway'...
-    fatal: Invalid path '/home/user/go/C:\path\to\your\cygwin\home\user\go\src\github.com\grpc-ecosystem\grpc-gateway': No such file or directory
+    # cd .; git clone https://github.com/gclb/y-grpc-gateway C:\path\to\your\cygwin\home\user\go\src\github.com\gclb\grpc-gateway
+    Cloning into 'C:\path\to\your\cygwin\home\user\go\src\github.com\gclb\grpc-gateway'...
+    fatal: Invalid path '/home/user/go/C:\path\to\your\cygwin\home\user\go\src\github.com\gclb\grpc-gateway': No such file or directory
     package github.com/gclb/y-grpc-gateway/v2/protoc-gen-grpc-gateway: exit status 128
 
 To fix this you need to run the `go get -u -v` commands and look for all lines starting with `# cd .;`. Copy and paste these lines into your shell and change the clone destination directories.

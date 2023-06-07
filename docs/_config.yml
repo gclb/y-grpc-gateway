@@ -6,9 +6,9 @@
 title: gRPC-Gateway
 description: gRPC-Gateway Documentation Website
 baseurl: "/y-grpc-gateway" # the subpath of your site, e.g. /blog
-url: "https://grpc-ecosystem.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://gclb.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-repository: grpc-ecosystem/y-grpc-gateway
+repository: gclb/y-grpc-gateway
 remote_theme: pmarsceill/just-the-docs
 
 permalink: pretty

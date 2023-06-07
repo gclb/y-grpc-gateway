@@ -10,7 +10,7 @@ nav_order: 7
 
 The gRPC-Gateway follows the spec of [`google.api.HttpRule`](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto), so first check out the documentation if it is feasible in the spec.
 
-For situations where annotating the proto file is not an option please reference the documentation on [gRPC API Configuration](https://grpc-ecosystem.github.io/y-grpc-gateway/docs/mapping/grpc_api_configuration/)
+For situations where annotating the proto file is not an option please reference the documentation on [gRPC API Configuration](https://gclb.github.io/y-grpc-gateway/docs/mapping/grpc_api_configuration/)
 
 See also [a past discussion](https://groups.google.com/d/msg/grpc-io/Xqx80hG0D44/VNCDHjeE6pUJ) in the grpc-io mailing list.
 
