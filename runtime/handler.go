@@ -79,12 +79,21 @@ func ForwardResponseStream(ctx context.Context, mux *ServeMux, marshaler Marshal
 
 			buf, err = marshaler.Marshal(result)
 		}
-
+		
 		if err != nil {
 			grpclog.Infof("Failed to marshal response chunk: %v", err)
 			handleForwardResponseStreamError(ctx, wroteHeader, marshaler, w, req, mux, err, delimiter)
 			return
 		}
+		
+		buf, err = mux.forwardResponseHandler(ctx, mux, w, req, buf)
+		
+		if err != nil {
+			grpclog.Infof("Failed to forward response handler: %v", err)
+			handleForwardResponseStreamError(ctx, wroteHeader, marshaler, w, req, mux, err, delimiter)
+			return
+		}
+		
 		if _, err := w.Write(buf); err != nil {
 			grpclog.Infof("Failed to send response chunk: %v", err)
 			return
